@@ -4,6 +4,8 @@ import CustomButton  from './CustomButton'
 import Image from 'next/image'
 
 
+
+
 function Hero() {
 
   const handleScroll = () => {
@@ -12,9 +14,9 @@ function Hero() {
 
 
   return (
-    <div className='hero'>
-      <div className='flex-1 pt-36 padding-x'>
-        <h1 className='hero__title'>
+    <div className='hero' >
+      <div className='flex-1 pt-36 padding-x' data-aos='fade-right' data-aos-delay='1000' data-aos-duration='1200'>
+        <h1 className='hero__title' >
             Find, Book, or Rent a Car - Quickly and Easily!
         </h1>
         <p className='hero__subtitle'>Streamline your car rental experience with our effortless process</p>
@@ -25,7 +27,7 @@ function Hero() {
       </div>
       <div className='hero__image-container'>
         <div className='hero__image'>
-          <Image src="/hero.png" alt="hero" fill className='object-contain'/>
+          <Image src="/hero.png" alt="hero" fill className='object-contain' data-aos='fade-right' data-aos-delay='1000' data-aos-duration='1200'/>
           <div className='hero__image-overlay'></div>
         </div>
       </div>
