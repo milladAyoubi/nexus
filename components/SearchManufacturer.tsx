@@ -19,7 +19,7 @@ const SearchManufacturer = ({manufacturer, setManufacturer} : SearchManufacturer
 
   return (
     <div className='search-maufacturer'>
-      <Combobox>
+      <Combobox value={manufacturer} onChange={setManufacturer}>
         <div className='relative w-full'>
         <Combobox.Button className='absolute top-[14px]'>
         <Image src="/car-logo.svg" width={20} height={20} className='ml-4' alt="Car Logo"/>
@@ -32,10 +32,13 @@ const SearchManufacturer = ({manufacturer, setManufacturer} : SearchManufacturer
         <Transition as={Fragment} leave="transition ease-in duration-100" 
         leaveFrom="opacity-100" leaveTo="opacity-0" afterLeave={() => setFirst('')}>
             <Combobox.Options>
-              {filterManu.length === 0 && first !== "" && (
-              <Combobox.Option value={first} className='search-manufacturer__option'>
-                Create "{first}"
-              </Combobox.Option>
+              {
+                filterManu.map((item) => (
+                  <Combobox.Option key={item} className={({active}) => `relative search-manufacturer__option 
+                  ${active ? 'bg-primary-blue text-grey' : 'text-grey-900'} `} value={item}>
+                        {item}
+                    </Combobox.Option>
+                )
               )}
             </Combobox.Options>
         </Transition>

@@ -40,7 +40,7 @@ export const manufacturers = [
     "Toyota",
     "Volkswagen",
     "Volvo",
-  ];
+  ]
   
   export const yearsOfProduction = [
     { title: "Year", value: "" },
